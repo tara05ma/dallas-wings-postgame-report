@@ -1,16 +1,50 @@
-# React + Vite
+# Dallas Wings Postgame Report Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered sports analytics web app that automatically generates professional post-game reports for the Dallas Wings (WNBA) using real-time ESPN play-by-play data.
 
-Currently, two official plugins are available:
+![Dashboard](screenshots/dashboard.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What It Does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Select any Dallas Wings game from the 2025 or 2026 season and the website:
 
-## Expanding the ESLint configuration
+- Pulls live play-by-play data directly from the ESPN API
+- Analyzes first-half vs second-half performance across key metrics
+- Breaks down scoring quarter by quarter
+- Surfaces top performers with points and contribution bars
+- Generates a professional written match report using the Groq LLM API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Report](screenshots/report1.png)
+![Report](screenshots/report2.png)
+
+---
+
+## The Analytics Behind It
+
+The app processes play-by-play data to extract meaningful performance metrics:
+
+- Computes first-half vs second-half splits across FG%, turnovers, 
+  defensive rebounds, assists and free throw attempts
+- Calculates quarter-by-quarter scoring breakdowns
+- Identifies top performers by extracting scoring events per player
+- Tracks halftime score differential as a key performance indicator
+
+---
+
+
+## Setup
+
+1. Clone the repo
+```bash
+git clone https://github.com/tara05ma/dallas-wings-postgame-report.git
+cd dallas-wings-postgame-report
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root:
