@@ -2,7 +2,7 @@
 
 An AI-powered sports analytics web app that automatically generates professional post-game reports for the Dallas Wings (WNBA) using real-time ESPN play-by-play data.
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 ---
 
@@ -16,8 +16,8 @@ Select any Dallas Wings game from the 2025 or 2026 season and the website:
 - Surfaces top performers with points and contribution bars
 - Generates a professional written match report using the Groq LLM API
 
-![Report](screenshots/report1.png)
-![Report](screenshots/report2.png)
+![Report](report1.png)
+![Report](report2.png)
 
 ---
 
