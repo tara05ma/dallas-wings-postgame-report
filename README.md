@@ -48,3 +48,13 @@ npm install
 ```
 
 3. Create a `.env` file in the root:
+
+VITE_GROQ_API_KEY=your_groq_api_key_here
+Get a free API key at [console.groq.com](https://console.groq.com)
+
+4. Run the app
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173`
