@@ -1,0 +1,226 @@
+.selector {
+  padding: 2rem 0;
+}
+
+.selector-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: 8px;
+  line-height: 1;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.season-record {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.record-wins { color: var(--wings-green); }
+.record-dash { color: var(--text-muted); font-size: 2rem; }
+.record-losses { color: var(--danger); }
+
+.season-toggle {
+  display: flex;
+  gap: 0;
+  margin: 1.5rem 0;
+  border-bottom: 2px solid var(--border);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  color: var(--text-muted);
+  padding: 0.75rem 2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn.active {
+  color: var(--wings-green);
+  border-bottom-color: var(--wings-green);
+}
+
+.toggle-btn:hover:not(.active) {
+  color: var(--text);
+}
+
+.games-table-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 60px 100px 130px;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.table-col-label {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+}
+
+.games-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.game-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 60px 100px 130px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-left: 3px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--navy-card);
+}
+
+.game-row.win {
+  border-left-color: var(--wings-green);
+  background: linear-gradient(90deg, rgba(200,240,0,0.18) 0%, rgba(10,18,30,0.85) 50%);
+}
+
+.game-row.loss {
+  border-left-color: var(--danger);
+  background: linear-gradient(90deg, rgba(239,68,68,0.18) 0%, rgba(10,18,30,0.85) 50%);
+}
+
+.game-row.upcoming {
+  border-left-color: var(--wings-blue);
+  background: linear-gradient(90deg, rgba(0,98,177,0.18) 0%, rgba(10,18,30,0.85) 50%);
+}
+
+.game-row:not(:disabled):hover.win {
+  background: linear-gradient(90deg, rgba(200,240,0,0.28) 0%, rgba(10,18,30,0.9) 60%);
+}
+
+.game-row:not(:disabled):hover.loss {
+  background: linear-gradient(90deg, rgba(239,68,68,0.28) 0%, rgba(10,18,30,0.9) 60%);
+}
+
+.game-row:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.game-row:not(:disabled):hover .row-generate {
+  opacity: 1;
+}
+
+.row-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.row-matchup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.row-date {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 1px;
+}
+
+.row-opponent {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.row-location {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.row-result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.result-pill {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+}
+
+.result-pill.win { background: rgba(200,240,0,0.15); color: var(--wings-green); }
+.result-pill.loss { background: rgba(239,68,68,0.15); color: var(--danger); }
+.result-pill.upcoming { background: rgba(0,98,177,0.15); color: var(--wings-blue); }
+
+.row-score {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.row-generate {
+  font-size: 0.7rem;
+  color: var(--wings-green);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.15s;
+  text-align: right;
+  font-family: 'DM Mono', monospace;
+}
